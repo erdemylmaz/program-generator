@@ -1,0 +1,250 @@
+body {
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 90%;
+  min-height: 90vh;
+
+  border-radius: 8px;
+
+  background-color: #f5faff;
+  padding: 20px;
+  box-shadow: 0 0 16px 16px #f5faff;
+}
+
+.days-list {
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+.day-text {
+  width: 100%;
+  height: 4vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: auto 8px;
+  border-radius: 2px;
+
+  font-weight: 200;
+  letter-spacing: 0.5px;
+}
+
+.todo-areas {
+  width: 100%;
+  min-height: 70vh;
+  max-height: 76vh;
+  overflow: scroll;
+
+  display: flex;
+  align-items: center;
+}
+
+.todo-area {
+  width: 100%;
+  margin: auto 16px;
+  min-height: 70vh;
+}
+
+.todo-div {
+  margin: 16px auto;
+  width: 100%;
+  min-height: 2vh; /* 20vh main*/
+  background-color: #fff;
+
+  border-radius: 4px;
+
+  padding: 8px;
+
+  transition: 250ms;
+  cursor: pointer;
+}
+
+.todo-div:hover {
+  transition: 250ms;
+
+  box-shadow: 0 0 4px 4px #fff;
+}
+
+.done-todo {
+  background-color: #82ff7e;
+}
+
+.done-todo:hover {
+  box-shadow: 0 0 4px 4px #82ff7e;
+}
+
+.todo-title {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.todo-description {
+  width: 100%;
+  margin-top: 4px;
+  text-align: center;
+  font-weight: 300;
+}
+
+.todo-link-div {
+  width: 100%;
+  margin-top: 4px;
+  text-align: right;
+  font-weight: 200;
+  font-size: 14px;
+}
+
+.settings {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: gray;
+
+  z-index: 1;
+
+  cursor: pointer;
+
+  transition: 250ms;
+
+  border-radius: 50%;
+}
+
+.settings:hover {
+  color: #000;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.settings-modal {
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  top: 0;
+  margin: 0;
+
+  z-index: 10;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.settings-container {
+  width: 50%;
+  height: 80vh;
+  padding: 16px;
+  background-color: #f5faff;
+  border-radius: 8px;
+
+  overflow: scroll;
+}
+
+.settings-header {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-input {
+  width: 256px;
+  border: none;
+  height: 36px;
+  padding: 4px;
+  border-radius: 2px;
+  margin: auto 8px;
+}
+
+.add-todo-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition: 250ms;
+}
+
+.add-todo-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.todo-list-item {
+  width: 60%;
+  margin: auto;
+  height: 8vh;
+  padding: 0 8px;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-weight: 500;
+  margin-top: 16px;
+}
+
+.todo-list-item-right {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  right: 0;
+}
+
+.todo-list-item-title {
+  color: rgba(0, 0, 0, 0.5);
+  margin-right: 16px;
+}
+
+.todo-list-remove-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+
+  background-color: rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 6px;
+}
+
+.todo-list-remove-btn:hover {
+  color: red;
+}
+
+.todo-list-done {
+  background-color: #82ff7e;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Weekly Program Generator</title>
+	<link rel="stylesheet" href="./style.css">
+	<script src="https://kit.fontawesome.com/fa178081cb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+	<div class="settings-modal">
+		<div class="settings-container">
+			<div class="settings-header">
+				<input type="text" class="todo-title-input todo-input" placeholder="Title">
+				<input type="text" class="todo-description-input todo-input" placeholder="Description">
+				<input type="text" class="todo-link-input todo-input" placeholder="Link">
+
+				<div class="add-todo-btn"><i class="fas fa-plus"></i></div>
+			</div>
+
+			<div class="todo-list">
+				<div class="todo-list-item todo-list-done">
+					<div class="todo-list-item-description">Temel Kavramlar Eyup B</div>
+					<div class="todo-list-item-right">
+						<div class="todo-list-item-title">Matematik</div>
+						<div class="todo-list-remove-btn"><i class="fas fa-trash"></i></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="settings"><i class="fas fa-wrench"></i></div>
+
+	<div class="container">
+		<div class="days-list">
+			<div class="day-text selected-day">Monday</div>
+			<div class="day-text">Tuesday</div>
+			<div class="day-text">Wednessday</div>
+			<div class="day-text">Thursday</div>
+			<div class="day-text">Friday</div>
+			<div class="day-text">Saturday</div>
+			<div class="day-text">Sunday</div>
+		</div>
+
+		<div class="todo-areas">
+			<div class="monday-todo-area todo-area"></div>
+
+			<div class="tuesday-todo-area todo-area"></div>
+
+			<div class="wednessday-todo-area todo-area"></div>
+
+			<div class="thursday-todo-area todo-area"></div>
+
+			<div class="friday-todo-area todo-area"></div>
+			
+			<div class="saturday-todo-area todo-area"></div>
+
+			<div class="friday-todo-area todo-area"></div>
+		</div>
+	</div>
+
+	<!-- <script src="./hover.js"></script> -->
+	<script src="./subjects.js"></script>
+	<script src="./changeStatus.js"></script>
+	<script src="./modal.js"></script>
+</body>
+</html>
