@@ -6,6 +6,8 @@ const todoLinkInput = document.querySelector(".todo-link-input");
 const addBtn = document.querySelector(".add-todo-btn");
 const todoList = document.querySelector(".todo-list");
 
+const specificList = document.querySelector(".list");
+
 const openModalBtn = document.querySelector(".settings");
 
 let removeBtns = document.querySelectorAll(".todo-list-remove-btn");
@@ -40,6 +42,8 @@ class Modal {
   };
 
   addSubject = () => {
+    let isSpecific = specificList.value !== "";
+
     let category = todoTitleInput.value;
     let description = todoDescriptionInput.value;
     let link = todoLinkInput.value;
@@ -89,17 +93,37 @@ class Modal {
 
 		  `;
 
-    todoAreas[randomDay].appendChild(div2);
-    subjects.days[randomDay].subjects.push({
-      category: category,
-      description: description,
-      status: "none",
-      hasLink: link ? true : false,
-      link: link,
-      todoCode: todoCode,
-    });
+    if (isSpecific) {
+      let specificDay = specificList.value;
+
+      todoAreas[specificDay].appendChild(div2);
+      subjects.days[specificDay].subjects.push({
+        category: category,
+        description: description,
+        status: "none",
+        hasLink: link ? true : false,
+        link: link,
+        todoCode: todoCode,
+      });
+
+      specificList.value = "";
+    } else {
+      todoAreas[randomDay].appendChild(div2);
+      subjects.days[randomDay].subjects.push({
+        category: category,
+        description: description,
+        status: "none",
+        hasLink: link ? true : false,
+        link: link,
+        todoCode: todoCode,
+      });
+    }
 
     todoDivs = document.querySelectorAll(".todo-div");
+
+    todoLinkInput.value = "";
+    todoTitleInput.value = "";
+    todoDescriptionInput.value = "";
 
     todoDivs.forEach((todoDiv) => {
       todoDiv.addEventListener("click", subjects.changeStatus);
@@ -113,6 +137,8 @@ class Modal {
     let subjectIndex = e.target.dataset.subjectindex;
 
     let listItem = e.target.parentElement.parentElement;
+
+    subjects.subjects.splice(subjectIndex, 1);
 
     if (listItem.className !== "todo-list-item") {
       listItem = e.target.parentElement.parentElement.parentElement;

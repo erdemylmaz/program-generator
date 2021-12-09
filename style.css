@@ -183,6 +183,12 @@ body {
   padding: 4px;
   border-radius: 2px;
   margin: auto 8px;
+
+  transition: 500ms;
+}
+
+.todo-input:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .add-todo-btn {
@@ -247,4 +253,18 @@ body {
 
 .todo-list-done {
   background-color: #82ff7e;
+}
+
+.list {
+  padding: 4px;
+  margin: 8px 4px;
+  border: none;
+  background-color: white;
+  border-radius: 4px;
+
+  transition: 250ms;
+}
+
+.list:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }

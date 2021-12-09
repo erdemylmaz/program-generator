@@ -1,6 +1,5 @@
 const todoAreas = document.querySelectorAll(".todo-area");
 // click for change the status of todo
-
 class Subjects {
   subjects = [];
 
@@ -51,7 +50,9 @@ class Subjects {
         ? (randomDayIndex = Math.floor(Math.random() * 7))
         : "";
 
-      this.days[randomDayIndex].subjects.push({ ...subject });
+      this.days[randomDayIndex].subjects.push({
+        ...subject,
+      });
     });
 
     localStorage.setItem("serparated", true);
@@ -60,14 +61,19 @@ class Subjects {
 
   initializeSubjects = () => {
     this.days.map((day) => {
-      console.log(day);
       if (day.subjects.length !== 0) {
         day.subjects.forEach((subject) => {
           let div = document.createElement("div");
           div.className = "todo-div";
           div.setAttribute("data-todoIndex", subject.todoCode);
 
-          subject.status == "done" ? div.classList.add("done-todo") : "";
+          this.subjects.map((mainSubjects) => {
+            if (mainSubjects.todoCode == subject.todoCode) {
+              if (mainSubjects.status == "done") {
+                div.classList.add("done-todo");
+              }
+            }
+          });
 
           div.innerHTML = `
 			<div class="todo-title" data-todoIndex=${subject.todoCode}>${
@@ -97,7 +103,6 @@ class Subjects {
   changeStatus = (e) => {
     let todoIndex = e.target.dataset.todoindex;
 
-    console.log(todoIndex);
     todoDivs = document.querySelectorAll(".todo-div");
     let todo = this.subjects[todoIndex];
 
@@ -118,6 +123,8 @@ class Subjects {
         }
       });
     }
+
+    localStorage.setItem("subjects", JSON.stringify(this.subjects));
   };
 }
 
@@ -136,6 +143,7 @@ if (!localStorage.getItem("serparated")) {
   localStorage.setItem("days", JSON.stringify(subjects.days));
 }
 subjects.initializeSubjects();
+// subjects.serparateSubjects();
 
 let todoDivs = document.querySelectorAll(".todo-div");
 
